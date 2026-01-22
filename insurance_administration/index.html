@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to ASCEND INSURANCE!</title>
+  
+  <style>
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: beige;
+      min-height: 100vh;
+    }
+    
+    
+    .container {
+      position: relative;
+      height: 710px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+   
+    .background-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.5;
+    }
+    
+  
+    .welcome-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(158, 205, 220);
+      min-width: 50%;
+      min-height: 50%;
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* ===== Typography ===== */
+    .company-name {
+      font-size: 50px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #333;
+    }
+    
+    .welcome-message {
+      font-size: 32px;
+      font-family: "Lucida Console", "Courier New", monospace;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    
+    /* ===== Button Styles ===== */
+    .proceed-button {
+      background-color: rgb(236, 181, 110);
+      border-radius: 5px;
+      padding: 12px 30px;
+      margin-top: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      color: #333;
+    }
+    
+    .proceed-button:hover {
+      background-color: rgb(226, 165, 85);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* ===== Responsive Adjustments ===== */
+    @media (max-width: 768px) {
+      .welcome-card {
+        min-width: 80%;
+        padding: 30px 20px;
+      }
+      
+      .company-name {
+        font-size: 40px;
+      }
+      
+      .welcome-message {
+        font-size: 24px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .welcome-card {
+        min-width: 90%;
+        padding: 20px 15px;
+      }
+      
+      .company-name {
+        font-size: 32px;
+      }
+      
+      .welcome-message {
+        font-size: 20px;
+      }
+      
+      .proceed-button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Background Image -->
+    <img src="background.jfif" alt="Ascend Insurance Background" class="background-image">
+    
+    <!-- Main Content Card -->
+    <main class="welcome-card">
+      <h1 class="company-name">Ascend Life Insurance</h1>
+      
+      <div class="welcome-content">
+        <p class="welcome-message">We are delighted to have you here!</p>
+        <p class="welcome-message">Your comfort is our priority.</p>
+        
+        <!-- Call to Action Button -->
+        <a href="insurance_policy_holder_details.php" class="proceed-button">
+          Proceed to Policy Holder Details
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

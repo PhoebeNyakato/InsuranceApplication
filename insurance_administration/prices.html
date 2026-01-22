@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Prices</title>
+        <style>
+         body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: beige;
+            height: 100vh;
+          }
+
+          .container {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;              /* enable flexbox */
+            justify-content: center;    /* center horizontally */
+            align-items: center;        /* center vertically */
+          }
+
+          .Background_image {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.3; /*  transparent background */
+          }
+
+          .thanks {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: burlywood;
+            min-width: 50%;
+            min-height: 50%;
+            border-radius: 20px;
+            padding: 20px;
+          }
+
+          p {
+            font-size: 32px;
+            font-family: "Lucida Console", "Courier New", monospace;
+          }
+
+          button {
+            background-color: beige;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+            max-width: 300px;
+            border: none;
+            cursor: pointer;
+          }
+          h3 {
+            font-size: 50px;
+          }
+        </style>
+    </head>
+  <body>
+    <div class="container">
+      <img src="img.jfif" alt="Background" class="Background_image">
+      
+      <div class="thanks">
+         <h3><b>ASCEND HOTEL </b></h3>
+              <h4><b>Room Rates:</b></h4>
+              <p>Single Room:$100 per night</p>
+              <p>Double Room: $150 per night</p>
+              <p>Family Suite: $200 per night</p>
+              <a href="Guest_reservation.php"><button>Click here to register for your Stay!</button></a>
+       </div>
+    </div>
+  </body>
+</html>
