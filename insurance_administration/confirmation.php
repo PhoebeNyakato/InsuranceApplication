@@ -113,6 +113,15 @@ if (isset($_POST['submit'])) { //Checks if the form was actually submitted by lo
         border-radius: 10px;
         font-size: 16px;
     }
+    .premium-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border:  #2c3e50;
+    margin-top: 20px;
+    text-align: center;
+    color: #2c3e50;
+    }
     </style>
  </head>
 
@@ -120,12 +129,12 @@ if (isset($_POST['submit'])) { //Checks if the form was actually submitted by lo
 
         <div class="container">
 
-            <?php if ($success): ?>
+            <?php if ($success):             
+            ?>
+             <p class="success">Your policy holder details have been successfully captured.</p>
 
-                <h1>Thank You!</h1> 
-                <p class="success">Your policy holder details have been successfully submitted.</p>
-                <!--This section uses PHP's "If statement" to show different content based on whether the data was saved.
-                If $success is true, it shows a thank you message and the details submitted.-->
+                <!--This section uses PHP's "If statement" to show the content based on  the data  saved.
+                If $success is true,  at the end it shows a thank you message and the details submitted.-->
                 <div class="details">
                     <p><strong>Name:</strong> <?= htmlspecialchars($policy_holder_name) ?></p> 
                     <!--Short echo tag used to print the variable value.-->
@@ -138,11 +147,27 @@ if (isset($_POST['submit'])) { //Checks if the form was actually submitted by lo
                     <p><strong>Beneficiary 1:</strong> <?= htmlspecialchars($beneficiary_1) ?></p>
                     <p><strong>Beneficiary 2:</strong> <?= htmlspecialchars($beneficiary_2) ?></p>
                     <p><strong>Beneficiary 3:</strong> <?= htmlspecialchars($beneficiary_3) ?></p>
+                
+                    <h2>Premium Assessment</h2>
+                    <p>Your premium is: <strong><?= htmlspecialchars($policy_holder_name) ?></strong></p>
+
+                    <?php
+                    $base_premium = 50000; // Base premium in ugx
+                    $age_factor = ($age < 25) ? 1.5 : (($age <= 40) ? 1.2 : 1.0);
+                    $occupation_factor = ($occupation == 'Student' ) ? 1.5 : 1.0;
+                    $gender_factor = ($gender == 'Male') ? 1.1 : 1.0; 
+                    $final_premium = $base_premium * $age_factor * $occupation_factor * $gender_factor;
+                    ?>
+                    <div class="premium-box">
+                        <strong>Your calculated premium is: UGX <?= ($final_premium) ?></strong>
+                    </div>
                 </div>
+                <h1>Would you like to proceed?</h1> 
 
-                <a href="insurance_policy_holder_details.php" class="button">Register Another Policy Holder</a>
+                <a href="" class="button">Yes,Proceed to get insurance policy.</a><!--link to the next  step to be added later-->
+                <a href="index.html" class="button">No, Exit.</a>
 
-             <!--This section uses PHP's "If statement" to show an error  based on what  data was input. -->
+             <!--This section uses PHP's "If statement" to show an error  based on what  data was input.-->
 
             <?php else: ?>
             
