@@ -149,7 +149,7 @@ if (isset($_POST['submit'])) { //Checks if the form was actually submitted by lo
                     <p><strong>Beneficiary 3:</strong> <?= htmlspecialchars($beneficiary_3) ?></p>
                 
                     <h2>Premium Assessment</h2>
-                    <p>Your premium is: <strong><?= htmlspecialchars($policy_holder_name) ?></strong></p>
+                    <p>Premium Payment for: <strong><?= htmlspecialchars($policy_holder_name) ?></strong></p>
 
                     <?php
                     $base_premium = 50000; // Base premium in ugx
@@ -164,7 +164,7 @@ if (isset($_POST['submit'])) { //Checks if the form was actually submitted by lo
                 </div>
                 <h1>Would you like to proceed?</h1> 
 
-                <a href="" class="button">Yes,Proceed to get insurance policy.</a><!--link to the next  step to be added later-->
+                <a href="policies.html" class="button">Yes,Proceed to get insurance policy.</a>
                 <a href="index.html" class="button">No, Exit.</a>
 
              <!--This section uses PHP's "If statement" to show an error  based on what  data was input.-->

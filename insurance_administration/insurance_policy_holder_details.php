@@ -23,11 +23,6 @@
         margin-bottom: 5px;
     }
 
-    .tagline{
-        font-style: italic;
-        margin-bottom: 25px;
-    }
-
     .form-grid{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -48,10 +43,7 @@
         font-size: 15px;
     }
 
-    .full-width{
-        grid-column: 1 / -1;
-    }
-
+  
     button{
         margin-top: 25px;
         width: 100%;
@@ -70,7 +62,7 @@
 
     <div class="container">
         <h1>Welcome to Ascend Life Insurance!</h1>
-        <div class="tagline">"Here for you"</div>
+        <div><em>"Here for you"</em></div>
         <p>Please fill in your policy holder details</p>
 
         <form method="post" action="confirmation.php">
@@ -127,13 +119,13 @@
                     <input type="text" name="beneficiary_2" required>
                 </div>
 
-                <div class="full-width">
+                <div>
                     <label>Beneficiary 3</label>
                     <input type="text" name="beneficiary_3" >
                 </div>
 
             </div>
-
+            <button  type="submit" name="submit"><a href="index.html">Cancel, back to Home page.</a></button>
             <button type="submit" name="submit">Proceed</button>
         </form>
     </div>
