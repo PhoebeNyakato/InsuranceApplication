@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container{
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+    }
+    .background-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.4;
+      top: 0;
+      left: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+      min-height: 100vh;
+      display: flex;
+    }
+    .top_nav {
+      width: 100%;
+      height: 70px;
+      background-color: rgb(190, 224, 235);
+      color: rgb(17, 17, 17);
+      padding: 10px 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    .sidebar {
+      width: 550px;
+      color: #141414;
+      padding: 20px;
+      display: block;
+      z-index: 2;
+      background-color: rgb(190, 224, 235);
+      margin-top: 70px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 40px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+    }
+
+    .sidebar ul li {
+      margin-top: 25px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+    }
+    .sidebar a:hover {
+    background-color: rgb(236, 181, 110);
+    color: white;
+    padding: 5px;
+  }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .premium_card, .policies_card, .insured_card, .claims_card {
+      background-color: rgb(236, 181, 110);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      width: 250px;
+      height: 200px;
+      text-align: center;
+      z-index: 2;
+      margin-top: 60px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        min-width: 80%;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+            <img src="background.jfif" alt="Background image" class="background-image">
+            <div class="top_nav">
+              <h2 style="margin-bottom: 4px;"><b>Ascend Life Insurance</b></h2>
+              <h4><em>"Here for you"</em></h4>
+            </div>
+        <aside class="sidebar">
+          <h3 style="margin-top: 15px;">Dashboard Menu</h3>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="insurance_policy_holder_details.php">New_Policy</a></li>
+            <li><a href="policies.html">Policy_types</a></li>
+            <li><a href="service_providers.html">Service_Providers</a></li>
+          </ul>
+        </aside>
+        <div class="content">
+        <div class="premium_card">
+          <h1>Premium</h1>
+          <p> total premium collected</p>
+        </div>
+          <div class="policies_card">
+            <h1>Policies</h1>
+            <p> total policies processed</p>
+          </div>
+          <div class="insured_card">
+            <h1>Insured Lives</h1>
+            <p> total insured lives</p>
+          </div>
+          <div class="claims_card">
+            <h1>Total claims</h1>
+            <p> total claims processed</p>
+          </div>
+        </div>
+  </body>
+</html>

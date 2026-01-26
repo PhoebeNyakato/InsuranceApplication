@@ -53,7 +53,6 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
     
-    /* ===== Typography ===== */
     .company-name {
       font-size: 50px;
       margin-bottom: 30px;
@@ -69,7 +68,6 @@
       color: #222;
     }
     
-    /* ===== Button Styles ===== */
     .proceed-button {
       background-color: rgb(236, 181, 110);
       border-radius: 5px;
@@ -91,12 +89,13 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     
-    /* ===== Responsive Adjustments ===== */
+    
     @media (max-width: 768px) {
       .welcome-card {
         min-width: 80%;
         padding: 30px 20px;
       }
+    }
       
       .company-name {
         font-size: 40px;
@@ -105,13 +104,8 @@
       .welcome-message {
         font-size: 24px;
       }
-    }
     
-    @media (max-width: 480px) {
-      .welcome-card {
-        min-width: 90%;
-        padding: 20px 15px;
-      }
+  
       
       .company-name {
         font-size: 32px;
@@ -125,16 +119,14 @@
         padding: 10px 20px;
         font-size: 16px;
       }
-    }
+    
   </style>
 </head>
 
 <body>
   <div class="container">
-    <!-- Background Image -->
     <img src="background.jfif" alt="Ascend Insurance Background" class="background-image">
     
-    <!-- Main Content Card -->
     <main class="welcome-card">
       <h1 class="company-name">Ascend Life Insurance</h1>
       
@@ -142,9 +134,8 @@
         <p class="welcome-message">We are delighted to have you here!</p>
         <p class="welcome-message">Your comfort is our priority.</p>
         
-        <!-- Call to Action Button -->
-        <a href="insurance_policy_holder_details.php" class="proceed-button">
-          Proceed to Policy Holder Details
+        <a href="dashboard.html" class="proceed-button">
+          Go to Dashboard
         </a>
       </div>
     </main>
