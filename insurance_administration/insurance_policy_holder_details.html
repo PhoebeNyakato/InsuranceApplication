@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Policy Holder Details</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(120deg, #fddbb0, #b8e4f0);
+
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #999;
+      font-size: 14px;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background-color: rgb(158, 205, 220);
+      padding: 40px 50px;
+      border-radius: 25px;
+      width: 75%;
+      max-width: 1000px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border-radius: 8px;
+      border: none;
+      background-color: #f7f1e3;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <div class="card">
+
+    <h1>Welcome to Ascend Life Insurance</h1>
+    <h3>"Here for you"</h3>
+    <h2>Please fill in your policy holder details</h2>
+
+    <!-- IMPORTANT: action goes to confirmation.php -->
+    <form method="POST" action="confirmation.php">
+
+      <div class="form-row">
+        <div>
+          <label>Policy Holder Name</label>
+          <input type="text" name="policy_holder_name" required>
+        </div>
+
+        <div>
+          <label>Age</label>
+          <input type="number" name="age" required>
+        </div>
+
+        <div>
+          <label>Email</label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div>
+          <label>Telephone</label>
+          <input type="text" name="telephone" required>
+        </div>
+
+        <div>
+          <label>Gender</label>
+          <select name="gender" required>
+            <option value="">-- Select gender --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Occupation</label>
+          <select name="occupation" required>
+            <option value=""> --Select occupation --</option>
+            <option value="Student">Student</option>
+            <option value="Employed">Employed</option>
+            <option value="Unemployed">Unemployed</option>
+            <option value="Retired">Retired</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Beneficiary 1</label>
+          <input type="text" name="beneficiary_1">
+        </div>
+
+        <div>
+          <label>Beneficiary 2</label>
+          <input type="text" name="beneficiary_2">
+        </div>
+
+        <div>
+          <label>Beneficiary 3</label>
+          <input type="text" name="beneficiary_3">
+        </div>
+      </div>
+
+      <button type="submit" name="submit">
+        Proceed to get Insurance Policy
+      </button>
+
+    </form>
+
+  </div>
+</div>
+</body>
+</html>
