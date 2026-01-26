@@ -6,6 +6,12 @@ error_reporting(E_ALL);  // Set error reporting to show all types of errors.
 ini_set('display_errors', 1);// Ensures that all errors are displayed on the web page for debugging purposes.
 
 require __DIR__ . '/vendor/autoload.php'; // Load Composer's autoloader for any external libraries.
+
+// --- NEW: Load .env logic ---
+// This looks for the .env file in your folder and makes the variables available to PHP.
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 use PHPMailer\PHPMailer\PHPMailer; //send emails using PHPMailer library
 use PHPMailer\PHPMailer\Exception; //explains any errors that occur when sending emails.
 
@@ -51,40 +57,46 @@ if (isset($_POST['submit'])) { //Checks if the form was actually submitted by lo
 
     if (mysqli_query($dbconn, $sql)) { ////Sends the command to the database. If it works, $success is set to true.
         $success = true;
+
+        // --- EMAIL LOGIC MOVED INSIDE THE SUBMIT BLOCK ---
+        // We only try to send the email if the database save was successful and $email is defined.
+        $mail = new PHPMailer(true); //Create a new PHPMailer instance, with exception handling enabled.
+
+        try {
+            //Server settings
+            $mail->isSMTP();                       // Send using (simple mail transfer protocol) SMTP
+            $mail->Host       = 'smtp.gmail.com'; // Set the SMTP server to send through gmail
+            $mail->SMTPAuth   = true;            // Enable SMTP authentication
+            
+            // --- UPDATED: Using .env variables ---
+            $mail->Username   = $_ENV['SMTP_USER'];  // SMTP username from .env
+            $mail->Password   = $_ENV['SMTP_PASS'];  // App password from .env
+            
+            $mail->Port       = 587;   // Transmission Control Protocol port to connect to
+            //TCP doesn't just blast data at a receiver; it establishes a formal connection first
+            
+            // Email details
+            $mail->setFrom($_ENV['SMTP_USER'], 'Ascend Life Insurance');
+            $mail->addAddress($email); // recipient email address from the form input
+
+            $mail->isHTML(true);
+            $mail->Subject = 'Policy Registration Confirmation';
+            $mail->Body = "
+                <h2>Welcome to Ascend Life Insurance</h2>
+                <p>Your policy has been registered successfully.</p>
+                <p><strong>Thank you for choosing us.</strong></p>
+            ";
+
+            $mail->send();
+            echo "Registration successful! Confirmation email sent.";
+        } catch (Exception $e) { //if any error occurs during the email sending process, it is caught here.
+            echo "Saved, Email failed to send: {$mail->ErrorInfo}"; //Displays the specific error message from PHPMailer.
+        }
+
     } else {
         $error = mysqli_error($dbconn); //If it fails, the error message from the database is stored in $error.
-
+        echo "Database Error: " . $error;
     }
-    
-}
-$mail = new PHPMailer(true); //Create a new PHPMailer instance, with exception handling enabled.
-
-try {
-    //Server settings
-    $mail->isSMTP();                       // Send using (simple mail transfer protocol) SMTP
-    $mail->Host       = 'smtp.gmail.com'; // Set the SMTP server to send through gmail
-    $mail->SMTPAuth   = true;            // Enable SMTP authentication
-    $mail->Username   = 'nyakatophoebe8900@gmail.com';  // SMTP username
-    $mail->Password   = 'izbn etez quuu jcrz';    //App password from google account
-    $mail->Port       = 587;   // Transmission Control Protocol port to connect to
-    //TCP doesn't just blast data at a receiver; it establishes a formal connection first
-    
-    // Email details
-    $mail->setFrom('nyakatophoebe8900@gmail.com', 'Ascend Life Insurance');
-    $mail->addAddress($email); // recipient  email address from the form input
-
-    $mail->isHTML(true);
-    $mail->Subject = 'Policy Registration Confirmation';
-    $mail->Body = "
-        <h2>Welcome to Ascend Life Insurance</h2>
-        <p>Your policy has been registered successfully.</p>
-        <p><strong>Thank you for choosing us.</strong></p>
-    ";
-
-    $mail->send();
-    echo "Registration successfull! Confirmation email sent.";
-} catch (Exception $e) { //if any error occurs during the email sending process, it is caught here.
-    echo "Saved, Email failed to send: {$mail->ErrorInfo}"; //Displays the specific error message from PHPMailer.
 }
 ?>
 <!DOCTYPE html>
