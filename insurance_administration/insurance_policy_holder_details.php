@@ -111,12 +111,12 @@
 
                 <div>
                     <label>Beneficiary 1</label>
-                    <input type="text" name="beneficiary_1" require>
+                    <input type="text" name="beneficiary_1">
                 </div>
 
                 <div>
                     <label>Beneficiary 2</label>
-                    <input type="text" name="beneficiary_2" required>
+                    <input type="text" name="beneficiary_2">
                 </div>
 
                 <div>
@@ -125,7 +125,7 @@
                 </div>
 
             </div>
-            <button  type="submit" name="submit"><a href="index.html">Cancel, back to Home page.</a></button>
+            <button  type="submit" name="submit"><a style="color: white;" href="index.html">Cancel, back to Home page.</a></button>
             <button type="submit" name="submit">Proceed</button>
         </form>
     </div>
