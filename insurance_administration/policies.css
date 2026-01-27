@@ -1,0 +1,73 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+     .container{
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      object-fit: cover;
+    }
+    .Life_card, .Health_card{
+      background-color: rgb(236, 181, 110);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      width: 250px;
+      height: 200px;
+      text-align: center;
+      z-index: 2;
+      margin-top: 60px;
+      box-shadow: 10px 10px 20px rgba(184, 12, 12, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+
+    }
+     @media (max-width: 768px) {
+      .container {
+        min-width: 80%;
+        padding: 30px 20px;
+      }
+    }
+    h1{
+      justify-content: center;
+      align-items: center;
+      margin-top: 0px;
+    }
+   .cards-wrapper {
+    display: flex;
+    gap: 50px; 
+    margin-top: 5px;
+    justify-content: center;
+}
+   .Health_card:hover, .Life_card:hover {
+  transform: translateY(-10px); /*lifts the card up when cursor is on it*/
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); 
+  background-color: rgb(245, 195, 130);
+   }
+
+   button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #b8e4f0;
+    font-size: 14px;
+    cursor: pointer;
+   }
+   .background-image {
+      position: absolute;
+      width: 98%;
+      height: 98%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.1;
+      top: 0;
+      left: 0;
+    }
+     
+  
