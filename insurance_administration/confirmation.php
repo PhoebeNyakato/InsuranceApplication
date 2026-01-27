@@ -7,7 +7,7 @@ ini_set('display_errors', 1);// Ensures that all errors are displayed on the web
 
 require __DIR__ . '/vendor/autoload.php'; // Load Composer's autoloader for any external libraries.
 
-// --- NEW: Load .env logic ---
+// NEW: Load .env logic 
 // This looks for the .env file in your folder and makes the variables available to PHP.
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) { //Checks if the form was actually submitted by lo
     if (mysqli_query($dbconn, $sql)) { ////Sends the command to the database. If it works, $success is set to true.
         $success = true;
 
-        // --- EMAIL LOGIC MOVED INSIDE THE SUBMIT BLOCK ---
+        // EMAIL LOGIC MOVED INSIDE THE SUBMIT BLOCK
         // We only try to send the email if the database save was successful and $email is defined.
         $mail = new PHPMailer(true); //Create a new PHPMailer instance, with exception handling enabled.
 
@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) { //Checks if the form was actually submitted by lo
             $mail->Host       = 'smtp.gmail.com'; // Set the SMTP server to send through gmail
             $mail->SMTPAuth   = true;            // Enable SMTP authentication
             
-            // --- UPDATED: Using .env variables ---
+            // UPDATED: Using .env variables for senstive details.
             $mail->Username   = $_ENV['SMTP_USER'];  // SMTP username from .env
             $mail->Password   = $_ENV['SMTP_PASS'];  // App password from .env
             
@@ -77,7 +77,10 @@ if (isset($_POST['submit'])) { //Checks if the form was actually submitted by lo
             
             // Email details
             $mail->setFrom($_ENV['SMTP_USER'], 'Ascend Life Insurance');
-            $mail->addAddress($email); // recipient email address from the form input
+            $mail->addAddress($_POST['email']); // recipient email address from the form input
+
+            //$mail->addAddress($email); // recipient email address from the form input
+
 
             $mail->isHTML(true);
             $mail->Subject = 'Policy Registration Confirmation';
@@ -198,9 +201,13 @@ if (isset($_POST['submit'])) { //Checks if the form was actually submitted by lo
 
                     <?php
                     $base_premium = 50000; // Base premium in ugx
-                    $age_factor = ($age < 25) ? 1.5 : (($age <= 40) ? 1.2 : 1.0);
-                    $occupation_factor = ($occupation == 'Student' ) ? 1.5 : 1.0;
-                    $gender_factor = ($gender == 'Male') ? 1.1 : 1.0; 
+                    $age_factor = ($age < 25) ? 1.5 : (($age <= 40) ? 1.2 : 1.0);//So a 20-year-old would pay 1.5× the base premium, 
+                    //a 35-year-old would pay 1.2×, and anyone over 40 would pay the full base amount.
+                    $occupation_factor = ($occupation == 'Student') ? 1.4 : 
+                     (($occupation == 'Unemployed') ? 1.5 : 
+                     (($occupation == 'Retired') ? 1.3 : 
+                     (($occupation == 'Employed') ? 1.0 : 1.0)));
+                    $gender_factor = ($gender == 'Male') ? 1.1 : 1.0; // Males pay 10% more.
                     $final_premium = $base_premium * $age_factor * $occupation_factor * $gender_factor;
                     ?>
                     <div class="premium-box">
