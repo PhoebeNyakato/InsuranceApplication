@@ -1,21 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Providers</title>
-    <link rel="stylesheet" href="service_providers.css">
-  </head>
-  
-  <body>
-    <div class="container">
-      <img src="background.jfif" alt="Background Image" class="background-image">
-      <h1>Service Providers</h1>
-      <ul>
-        <li>Healthcare Providers</li>
-        <li>Legal Services</li>
-        <li>Financial Advisors</li>
-      </ul>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Providers</title>
+  <link rel="stylesheet" href="service_providers.css">
+</head>
+
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="index.html">Home</a>
+        <a href="#">Contact</a> <!-- Placeholder for contact page -->
+      </div>
     </div>
-  </body>
+    <div class="top-content">
+      <div class="company_name">
+        <h1>Ascend Life Insurance</h1>
+      </div>
+      <div class="links">
+        <a href="policies.html"style="color: #0f766e;">POLICIES</a>
+        <a href="service_providers.html"style="color: #0f766e;">PROVIDERS</a>
+      </div>
+      <div>
+        <a href="insurance_policy_holder_details.html" class="button_start">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Trusted Service Providers</h1>
+    <h2>We partner with the best to ensure your well-being.</h2>
+
+    <div class="cards">
+      <div class="provider_card">
+        <div class="icon-box">
+          <i data-lucide="stethoscope" style="color: #0ea5e9; width: 24px; height: 24px;"></i>
+        </div>
+        <h2>HealthCare Services</h2>
+        <p>Comprehensive health services for all your medical needs.</p>
+      </div>
+      
+      <div class="provider_card">
+        <div class="icon-box">
+          <i data-lucide="credit-card" style="color: #0ea5e9; width: 24px; height: 24px;"></i>
+        </div>
+        <h2>Payment Channels</h2>
+        <p>Convenient payment options for your insurance premiums.</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
 </html>

@@ -1,28 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLICIES</title>
-    <link rel="stylesheet" href="policies.css">
-  </head>
 
-    <body>
-      <div class="container">
-        <img src="insurance.jfif" alt="Background image" class="background-image">
-        <h1>Available Insurance Policies</h1>
-        <div class="cards-wrapper">
-          <div class="Health_card">
-            <h2>Health Insurance</h2>
-            <p>Comprehensive health coverage for you and your family.</p>
-            <button>View Details</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POLICIES</title>
+  <link rel="stylesheet" href="policies.css">
+</head>
+
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="index.html">Home</a>
+        <a href="#">Contact</a> <!-- Placeholder for contact page -->
+      </div>
+    </div>
+    <div class="top-content">
+      <div class="company_name">
+        <h1>Ascend Life Insurance</h1>
+      </div>
+      <div class="links">
+        <a href="policies.html" style="color: #0f766e;">POLICIES</a>
+        <a href="service_providers.html" style="color: #0f766e;"> PROVIDERS</a>
+      </div>
+      <div class="features">
+        <a href="insurance_policy_holder_details.html" class="button_start">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Health Insurance Plans</h2>
+    <div class="plan-section">
+      <div class="cards-wrapper">
+        <div class="policy-card">
+          <div class="card-header">
+            <i data-lucide="heart" style="color: #0f766e; width: 32px; height: 32px; margin-bottom: 10px;"></i>
+            <h2>Essential Care</h2>
           </div>
-            <div class="Life_card">
-              <h2>Life Insurance</h2>
-              <p>Protect your loved ones with our life insurance plans.</p>
-              <button>View Details</button>
-            </div>
-          </div>
+          <p>Basic coverage for individuals.</p>
+          <ul>
+            <li>Inpatient Coverage (Limit 10M)</li>
+            <li>Outpatient Services</li>
+            <li>Annual Checkup</li>
+          </ul>
         </div>
-    </body>
+
+        <div class="policy-card">
+          <div class="card-header">
+            <i data-lucide="users" style="color: #0f766e; width: 32px; height: 32px; margin-bottom: 10px;"></i>
+            <h2>Family Plus</h2>
+          </div>
+          <p>Comprehensive care for families.</p>
+          <ul>
+            <li>Inpatient (Limit 20M)</li>
+            <li>Outpatient & Specialist</li>
+            <li>Dental & Optical Cover</li>
+            <li>Maternity Benefits</li>
+          </ul>
+        </div>
+
+        <div class="policy-card">
+          <div class="card-header">
+            <i data-lucide="crown" style="color: #0f766e; width: 32px; height: 32px; margin-bottom: 10px;"></i>
+            <h2>Premium Elite</h2>
+          </div>
+          <p>Maximum coverage with zero limits.</p>
+          <ul>
+            <li>Unlimited Inpatient</li>
+            <li>Dental, Optical, Maternity</li>
+            <li>Critical Illness Cover</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="plan-section">
+      <h2>Life Insurance Plans</h2>
+      <div class="cards-wrapper">
+        <div class="policy-card">
+          <div class="card-header">
+            <i data-lucide="hourglass" style="color: #0f766e; width: 32px; height: 32px; margin-bottom: 10px;"></i>
+            <h2>Term Life</h2>
+          </div>
+          <p>Affordable protection for a specific period.</p>
+          <ul>
+            <li>10, 20, or 30 Year Terms</li>
+            <li>High Death Benefit</li>
+            <li>Fixed Note Premiums</li>
+          </ul>
+        </div>
+
+        <div class="policy-card">
+          <div class="card-header">
+            <i data-lucide="infinity" style="color: #0f766e; width: 32px; height: 32px; margin-bottom: 10px;"></i>
+            <h2>Whole Life</h2>
+          </div>
+          <p>Permanent coverage that builds cash value.</p>
+          <ul>
+            <li>Lifetime Coverage</li>
+            <li>Cash Value Accumulation</li>
+            <li>Dividend Potential</li>
+          </ul>
+        </div>
+
+        <div class="policy-card">
+          <div class="card-header">
+            <i data-lucide="piggy-bank" style="color: #0f766e; width: 32px; height: 32px; margin-bottom: 10px;"></i>
+            <h2>Endowment</h2>
+          </div>
+          <p>Save for the future while being protected.</p>
+          <ul>
+            <li>Lump Sum Maturity</li>
+            <li>Life Cover Component</li>
+            <li>Guaranteed Returns</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
 </html>
