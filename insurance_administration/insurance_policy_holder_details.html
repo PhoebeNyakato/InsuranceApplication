@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Policy Holder Details</title>
@@ -8,97 +9,142 @@
 </head>
 
 <body>
-<div class="container">
-  <div class="card">
+  <div class="container">
+    <div class="card">
 
-    <h1>Welcome to Ascend Life Insurance</h1>
-    <h3>"Here for you"</h3>
-    <h2>Please fill in your policy holder details
+      <h1>Welcome to Ascend Life Insurance</h1>
+      <h3>"Here for you"</h3>
+      <h2>Please fill in your policy holder details
 
-    </h2>
+      </h2>
 
-    <!-- IMPORTANT: action goes to confirmation.php -->
-    <form method="POST" action="confirmation.php">
+      <form method="POST" action="confirmation.php">
 
-      <div class="form-row">
-        <div>
-          <label>Policy Holder Name
-            <i data-lucide="folder-pen" style="width: 15px; height: 15px;"></i>
-          </label>
-          <input type="text" name="policy_holder_name" required>
+        <div class="form-row">
+          <div>
+            <label>Policy Holder Name
+              <i data-lucide="folder-pen" style="width: 15px; height: 15px;"></i>
+            </label>
+            <input type="text" name="policy_holder_name" required>
+          </div>
+
+          <div>
+            <label>Age</label>
+            <input type="number" name="age" required>
+          </div>
+
+          <div>
+            <label>
+              Date of Birth
+              <i data-lucide="calendar" style="width: 15px; height: 15px;"></i>
+            </label>
+            <input type="date" name="dateofbirth" required>
+          </div>
+          <div>
+            <label>Email
+              <i data-lucide="mail" style="width: 15px; height: 15px;"></i>
+            </label>
+            <input type="email" name="email" required>
+          </div>
+
+          <div>
+            <label>Telephone
+              <i data-lucide="phone" class="icon-phone" style="width: 15px; height: 15px;"></i>
+            </label>
+            <input type="text" name="telephone" required>
+          </div>
+
+          <div>
+            <label>Gender
+              <i data-lucide="users" style="width: 15px; height: 15px;"></i>
+            </label>
+            <select name="gender" required>
+              <option value="">-- Select gender --</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Occupation
+              <i data-lucide="briefcase" style="width: 15px; height: 15px;"></i>
+            </label>
+            <select name="occupation" required>
+              <option value=""> --Select occupation --</option>
+              <option value="Student">Student</option>
+              <option value="Employed">Employed</option>
+              <option value="Unemployed">Unemployed</option>
+              <option value="Retired">Retired</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Policy Type
+              <i data-lucide="file-text" style="width: 15px; height: 15px;"></i>
+            </label>
+            <select name="policy_type" id="policy_type" required>
+              <option value="">-- Select Policy Plan --</option>
+              <optgroup label="Health Insurance">
+                <option value="Health_Essential">Health - Essential Care</option>
+                <option value="Health_Family">Health - Family Plus</option>
+                <option value="Health_Premium">Health - Premium Elite</option>
+              </optgroup>
+              <optgroup label="Life Insurance">
+                <option value="Life_Term">Life - Term Life</option>
+                <option value="Life_Whole">Life - Whole Life</option>
+                <option value="Life_Endowment">Life - Endowment</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div>
+            <label>Date
+              <i data-lucide="calendar-check" style="width: 15px; height: 15px;"></i>
+            </label>
+            <input type="date" name="date" required>
+          </div>
+          <div>
+            <label>Beneficiary 1</label>
+            <input type="text" name="beneficiary_1">
+          </div>
+
+          <div>
+            <label>Beneficiary 2</label>
+            <input type="text" name="beneficiary_2">
+          </div>
+
+          <div>
+            <label>Beneficiary 3</label>
+            <input type="text" name="beneficiary_3">
+          </div>
         </div>
 
-        <div>
-          <label>Age</label>
-          <input type="number" name="age" required>
-        </div>
+        <button type="submit" name="submit">
+          Proceed to get Insurance Policy
+        </button>
+        <button name="exit"><a href="index.html" style="text-decoration: none; color: black;">
+            Exit</button>
 
-        <div>
-          <label>Email
-            <i data-lucide="mail" style="width: 15px; height: 15px;"></i>
-          </label>
-          <input type="email" name="email" required>
-        </div>
+      </form>
 
-        <div>
-          <label>Telephone
-            <i data-lucide="phone" class="icon-phone" style="width: 15px; height: 15px;"></i>
-          </label>
-          <input type="text" name="telephone" required>
-        </div>
-
-        <div>
-          <label>Gender
-            <i data-lucide="users" style="width: 15px; height: 15px;"></i>
-          </label>
-          <select name="gender" required>
-            <option value="">-- Select gender --</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-        </div>
-
-        <div>
-          <label>Occupation
-            <i data-lucide="briefcase" style="width: 15px; height: 15px;"></i>
-          </label>
-          <select name="occupation" required>
-            <option value=""> --Select occupation --</option>
-            <option value="Student">Student</option>
-            <option value="Employed">Employed</option>
-            <option value="Unemployed">Unemployed</option>
-            <option value="Retired">Retired</option>
-          </select>
-        </div>
-
-        <div>
-          <label>Beneficiary 1</label>
-          <input type="text" name="beneficiary_1">
-        </div>
-
-        <div>
-          <label>Beneficiary 2</label>
-          <input type="text" name="beneficiary_2">
-        </div>
-
-        <div>
-          <label>Beneficiary 3</label>
-          <input type="text" name="beneficiary_3">
-        </div>
-      </div>
-
-      <button type="submit" name="submit">
-        Proceed to get Insurance Policy
-      </button>
-      <button name="exit"><a href="index.html" style="text-decoration: none; color: black;">
-        Exit</button>
-
-    </form>
-
+    </div>
   </div>
-</div>
-<script>
-  lucide.createIcons();
-</script>
+  <script>
+    lucide.createIcons();
+
+    // Auto-select plan from URL parameter
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const plan = urlParams.get('plan'); // e.g. 'Health_Essential'
+
+      if (plan) {
+        const select = document.getElementById('policy_type');
+        if (select) {
+          select.value = plan;
+        }
+      }
+    }
+  </script>
 </body>
+
 </html>

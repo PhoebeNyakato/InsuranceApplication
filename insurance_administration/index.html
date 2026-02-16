@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to ASCEND INSURANCE!</title>
   <link rel="stylesheet" href="index.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
 </head>
+
 <body>
-  <div class="container">
-    <img src="background.jfif" alt="Ascend Insurance Background" class="background-image">
-    
-    <main class="welcome-card">
-      <h1 class="company-name">Ascend Life Insurance</h1>
-      
-      <div class="welcome-content">
-        <p class="welcome-message">We are delighted to have you here!</p>
-        <p class="welcome-message">Your comfort is our priority.</p>
-        
-        <a href="dashboard.html" class="proceed-button">
-          Go to Dashboard
-        </a>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="#">About Us</a> <!-- Placeholder for about us page -->
+        <a href="#">Contact</a>
+        <a href="#">Careers</a>
       </div>
-    </main>
-  </div>
+    </div>
+    <div class="main-nav">
+      <div class="brand">
+        <h1 style="color: #e78210">Ascend Life Insurance</h1>
+      </div>
+      <div class="nav-links">
+        <a href="policies.html" style="color: #e78210">LIFE POLICIES</a>
+      </div>
+      <div class="nav-links">
+        <a href="policies.html"  style="color: #e78210">HEALTH POLICIES</a> 
+      </div>
+    
+
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="welcome-card">
+      <h2 class="welcome-title">Your Future, Secured.</h2>
+      <p class="welcome-message">We are delighted to have you here! Your comfort is our priority.</p>
+
+        <div class="content">
+          <i data-lucide="file-search"></i>
+          <a href="policies.html" class="content_link">Explore our policies.</a>
+        </div>
+      </div>
+    </div>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
+
 </html>

@@ -1,73 +1,202 @@
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-     .container{
-      position: relative;
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      object-fit: cover;
-    }
-    .Life_card, .Health_card{
-      background-color: rgb(236, 181, 110);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-      width: 250px;
-      height: 200px;
-      text-align: center;
-      z-index: 2;
-      margin-top: 60px;
-      box-shadow: 10px 10px 20px rgba(184, 12, 12, 0.25);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-    }
-     @media (max-width: 768px) {
-      .container {
-        min-width: 80%;
-        padding: 30px 20px;
-      }
-    }
-    h1{
-      justify-content: center;
-      align-items: center;
-      margin-top: 0px;
-    }
-   .cards-wrapper {
-    display: flex;
-    gap: 50px; 
-    margin-top: 5px;
-    justify-content: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-   .Health_card:hover, .Life_card:hover {
-  transform: translateY(-10px); /*lifts the card up when cursor is on it*/
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); 
-  background-color: rgb(245, 195, 130);
-   }
 
-   button{
-    margin-top: 20px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    background-color: #b8e4f0;
-    font-size: 14px;
-    cursor: pointer;
-   }
-   .background-image {
-      position: absolute;
-      width: 98%;
-      height: 98%;
-      object-fit: cover;
-      z-index: -1;
-      opacity: 0.1;
-      top: 0;
-      left: 0;
-    }
-     
-  
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #fff7ed 0%, #e0f2fe 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.top-bar {
+  background-color: #94a3b8;
+  height: 35px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.top-bar-content a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.75rem;
+  margin-left: 20px;
+  transition: color 0.2s;
+}
+
+.top-bar-content a:hover {
+  color: white;
+}
+
+.top-content {
+  background-color: rgba(255, 255, 255, 0.95);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #93c5fd;
+}
+
+.company_name h1 {
+  font-size: 3.25rem;
+  font-weight: 700;
+  color: #e78210;
+}
+
+.links {
+  display: flex;
+  gap: 30px;
+}
+
+
+
+.button_start {
+  background-color: #f97316;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.button_start:hover {
+  background-color: #ea580c;
+}
+
+.container {
+  padding: 140px 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.plan-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: #64748b;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #93c5fd;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.policy-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0f2fe;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.policy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.1);
+  border-color: #fcca92;
+}
+
+
+
+.policy-card h2 {
+  font-size: 1.5rem;
+  color: #f79e38;
+  margin-bottom: 10px;
+}
+
+.policy-card p {
+  color: #64748b;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.policy-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  color: #334155;
+  flex-grow: 1;
+}
+
+.policy-card ul li {
+  margin-bottom: 8px;
+}
+
+.policy-btn {
+  display: block;
+  background-color: #f97316;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.policy-btn:hover {
+  background-color: #ea580c;
+}
+
+
+
+@media (max-width: 768px) {
+  .top-bar {
+    display: none;
+  }
+
+  .top-content {
+    padding: 0 20px;
+    height: 70px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .container {
+    padding-top: 90px;
+  }
+
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
