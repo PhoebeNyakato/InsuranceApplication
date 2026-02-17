@@ -131,19 +131,6 @@
   </div>
   <script>
     lucide.createIcons();
-
-    // Auto-select plan from URL parameter
-    window.onload = function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const plan = urlParams.get('plan'); // e.g. 'Health_Essential'
-
-      if (plan) {
-        const select = document.getElementById('policy_type');
-        if (select) {
-          select.value = plan;
-        }
-      }
-    }
   </script>
 </body>
 

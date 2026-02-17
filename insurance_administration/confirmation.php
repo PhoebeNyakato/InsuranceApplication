@@ -41,18 +41,8 @@ if (isset($_POST['submit'])) {
     $dateofbirth = date('Y-m-d', strtotime($_POST['dateofbirth']));
     $date = date('Y-m-d H:i:s');
 
-    // Map Policy IDs to Readable Names
-    $policy_names = [
-        'Health_Essential' => 'Health Insurance - Essential Care',
-        'Health_Family' => 'Health Insurance - Family Plus',
-        'Health_Premium' => 'Health Insurance - Premium Elite',
-        'Life_Term' => 'Life Insurance - Term Life',
-        'Life_Whole' => 'Life Insurance - Whole Life',
-        'Life_Endowment' => 'Life Insurance - Endowment'
-    ];
+   
     
-    // Get readable name or default to raw value
-    $display_policy_type = isset($policy_names[$policy_type]) ? $policy_names[$policy_type] : $policy_type;
 
     $base_premium = 50000; 
     $age_factor = ($age < 25) ? 1.5 : (($age <= 40) ? 1.2 : 1.0);
@@ -65,7 +55,7 @@ if (isset($_POST['submit'])) {
 
     $next_due_date = date('Y-m-d', strtotime('+1 days'));
 
-    // Generate Unique Policy Number
+    // Generating a  Unique Policy Number
     $policy_number = "POL-" . date('Ymd') . "-" . strtoupper(substr(md5(uniqid(mt_rand(), true)), 0, 4));
 
     $sql = "
@@ -95,7 +85,7 @@ if (isset($_POST['submit'])) {
             $mail->Port       = 587;  
             
             $mail->setFrom($_ENV['SMTP_USER'], 'Ascend Life Insurance');
-            $mail->addAddress($_POST['email']);// Add a recipient
+            $mail->addAddress($_POST['email']);
 
 
             $mail->isHTML(true);
@@ -228,7 +218,6 @@ if (isset($_POST['submit'])) {
         border-radius: 8px;
         font-size: 1rem;
         font-weight: 600;
-        transition: background 0.2s;
     }
     
     a.button:hover {
@@ -251,7 +240,7 @@ if (isset($_POST['submit'])) {
         background: #ffffff;
         padding: 20px;
         border-radius: 10px;
-        border: 1px solid #0ea5e9; /* Sky Blue Border */
+        border: 1px solid #0ea5e9; 
         margin-top: 25px;
         text-align: center;
         color: #0f172a;
@@ -260,7 +249,7 @@ if (isset($_POST['submit'])) {
     
     .premium-value {
         font-size: 1.5rem;
-        color: #0ea5e9; /* Sky Blue Value */
+        color: #0ea5e9; 
         font-weight: 700;
         display: block;
         margin-bottom: 5px;
